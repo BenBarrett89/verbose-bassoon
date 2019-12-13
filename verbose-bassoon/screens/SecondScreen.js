@@ -17,6 +17,12 @@ const styles = StyleSheet.create({
 })
 
 export default class SecondScreen extends React.Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: `${navigation.getParam('count')} seconds`,
+    }
+  }
+
   render() {
     const { navigation } = this.props
     const count = navigation.getParam('count')

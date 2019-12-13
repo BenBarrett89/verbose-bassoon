@@ -17,6 +17,10 @@ const styles = StyleSheet.create({
 })
 
 export default class HomeScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Home',
+  }
+
   render() {
     const { navigation } = this.props
     return (
