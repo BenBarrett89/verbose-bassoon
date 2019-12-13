@@ -10,21 +10,21 @@ import { Ionicons } from '@expo/vector-icons'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#5c5c5c',
     alignItems: 'center',
     justifyContent: 'center',
   }
 })
 
-export default class HomeScreen extends React.Component {
+export default class SecondScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Ionicons name="md-musical-notes" size={32} color="green" />
-        <Text>I am a bassoon that is very verbose!</Text>
+        <Ionicons name="md-stopwatch" size={32} color="#baf1e4" />
+        <Text>Second screen!</Text>
         <Button
-          title="Second"
-          onPress={() => this.props.navigation.navigate('Second')}
+          title="Home"
+          onPress={() => this.props.navigation.navigate('Home')}
         />
       </View>
     )
