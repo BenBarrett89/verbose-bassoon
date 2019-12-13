@@ -34,6 +34,10 @@ export default class SecondScreen extends React.Component {
           title="Back"
           onPress={() => this.props.navigation.goBack()}
         />
+        <Button
+          title="Start Again"
+          onPress={() => this.props.navigation.popToTop()}
+        />
       </View>
     )
   }
