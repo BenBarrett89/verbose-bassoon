@@ -5,6 +5,8 @@ import React, { useState } from 'react'
 import { Platform, StyleSheet, Text, View } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 
+import AppNavigator from './navigation/AppNavigator'
+
 export default function App() {
   const [isLoadingComplete, setLoadingComplete] = useState(false)
 
@@ -19,8 +21,7 @@ export default function App() {
   } else {
     return (
       <View style={styles.container}>
-        <Ionicons name="md-checkmark-circle" size={32} color="green" />
-        <Text>I am a bassoon that is very verbose!</Text>
+        <AppNavigator />
       </View>
     )
   }
@@ -42,12 +43,9 @@ function handleFinishLoading(setLoadingComplete) {
   setLoadingComplete(true);
 }
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-})
+  },
+});
