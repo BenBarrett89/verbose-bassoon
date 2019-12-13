@@ -26,6 +26,14 @@ export default class SecondScreen extends React.Component {
           title="Home"
           onPress={() => this.props.navigation.navigate('Home')}
         />
+        <Button
+          title="Second"
+          onPress={() => this.props.navigation.push('Second')}
+        />
+        <Button
+          title="Back"
+          onPress={() => this.props.navigation.goBack()}
+        />
       </View>
     )
   }
