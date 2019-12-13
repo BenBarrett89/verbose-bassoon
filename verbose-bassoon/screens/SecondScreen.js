@@ -47,6 +47,10 @@ export default class SecondScreen extends React.Component {
           title="Start Again"
           onPress={() => navigation.popToTop()}
         />
+        <Button
+          title="Really Start Again"
+          onPress={() => navigation.navigate('Home', { precount: 0 })}
+        />
       </View>
     )
   }

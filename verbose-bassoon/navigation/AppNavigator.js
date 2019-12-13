@@ -11,7 +11,16 @@ const AppNavigator = createStackNavigator(
     Second: SecondScreen
   },
   {
-    initialRouteName: 'Home'
+    initialRouteName: 'Home',
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: '#5c5c5c',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    }
   }
 )
 
