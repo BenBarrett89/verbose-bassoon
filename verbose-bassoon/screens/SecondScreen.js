@@ -18,25 +18,28 @@ const styles = StyleSheet.create({
 
 export default class SecondScreen extends React.Component {
   render() {
+    const { navigation } = this.props
+    const count = navigation.getParam('count')
     return (
       <View style={styles.container}>
         <Ionicons name="md-stopwatch" size={32} color="#baf1e4" />
         <Text>Second screen!</Text>
+        <Text>{navigation.getParam('count')} seconds</Text>
         <Button
           title="Home"
-          onPress={() => this.props.navigation.navigate('Home')}
+          onPress={() => navigation.navigate('Home')}
         />
         <Button
           title="Second"
-          onPress={() => this.props.navigation.push('Second')}
+          onPress={() => navigation.push('Second', { count: count + 1 })}
         />
         <Button
           title="Back"
-          onPress={() => this.props.navigation.goBack()}
+          onPress={() => navigation.goBack()}
         />
         <Button
           title="Start Again"
-          onPress={() => this.props.navigation.popToTop()}
+          onPress={() => navigation.popToTop()}
         />
       </View>
     )

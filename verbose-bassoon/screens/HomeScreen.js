@@ -18,13 +18,14 @@ const styles = StyleSheet.create({
 
 export default class HomeScreen extends React.Component {
   render() {
+    const { navigation } = this.props
     return (
       <View style={styles.container}>
         <Ionicons name="md-musical-notes" size={32} color="green" />
         <Text>I am a bassoon that is very verbose!</Text>
         <Button
           title="Second"
-          onPress={() => this.props.navigation.navigate('Second')}
+          onPress={() => navigation.navigate('Second', { count: 0 })}
         />
       </View>
     )
