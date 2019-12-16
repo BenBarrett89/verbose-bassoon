@@ -6,6 +6,7 @@ import {
   View
 } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
+import { connect } from 'react-redux'
 
 const styles = StyleSheet.create({
   container: {
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
   }
 })
 
-export default class HomeScreen extends React.Component {
+class HomeScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       title: navigation.getParam('precount') ? `Precounted ${navigation.getParam('precount')}` : 'Home',
@@ -50,7 +51,22 @@ export default class HomeScreen extends React.Component {
           title="Reset"
           onPress={() => navigation.setParams({ precount: 0 })}
         />
+        <Text>Redux count: {this.props.count}</Text>
+        <Button
+          title="Increment"
+          onPress={() => this.props.dispatch({ type: 'INCREMENT' })}
+        />
+        <Button
+          title="Decrement"
+          onPress={() => this.props.dispatch({ type: 'DECREMENT' })}
+        />
+        <Button
+          title="Redux Page"
+          onPress={() => navigation.push('Redux')}
+        />
       </View>
     )
   }
 }
+
+export default connect(state => ({ count: state.count }))(HomeScreen)

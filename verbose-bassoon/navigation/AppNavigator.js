@@ -4,11 +4,13 @@ import { createStackNavigator } from 'react-navigation-stack'
 
 import HomeScreen from '../screens/HomeScreen'
 import SecondScreen from '../screens/SecondScreen'
+import ReduxScreen from '../screens/ReduxScreen';
 
 const AppNavigator = createStackNavigator(
   {
     Home: HomeScreen,
-    Second: SecondScreen
+    Second: SecondScreen,
+    Redux: ReduxScreen
   },
   {
     initialRouteName: 'Home',
